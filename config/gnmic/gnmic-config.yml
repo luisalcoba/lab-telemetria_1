@@ -15,7 +15,14 @@ subscriptions:
     sample-interval: 5s
     paths:
       - /platform/control[slot=*]/cpu[index=all]/total
-      
+
+  srl-acl-statistics: 
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    paths:
+      - /srl_nokia-acl:acl/interface[interface-id=*]/input/acl-filter[name=flood][type=ipv4]/entry[sequence-id=*]/statistics  
+
 outputs:
   
   prom-output:
